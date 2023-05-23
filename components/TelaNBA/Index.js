@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text,FlatList, Image, StyleSheet, Button,ScrollView } from 'react-native';
+import { View, Text,FlatList, Image, StyleSheet ,ScrollView } from 'react-native';
+import { Button} from '@rneui/themed';
 import { useDados } from '../../API/Dados';
+
 
 const TelaNBA = ({navigation}) => {
   console.log('TelaNBA')
@@ -32,16 +34,47 @@ const TelaNBA = ({navigation}) => {
         <Text>Principal jogador:{item.estrela_do_time}</Text>
         </ScrollView>
       </View>
+
+      
     )
   }
   return (
     <View>  
        <Button
         title="Ir para a tela inicial"
+        icon={{
+          name: 'home',
+          size: 15,
+          color: 'white',
+        }}
+        iconContainerStyle={{ marginRight: 10 }}
+              titleStyle={{ fontWeight: '700' }}
+              buttonStyle={{
+                backgroundColor: 'rgba(90, 154, 230, 1)',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                borderRadius: 30,
+              }}
+              containerStyle={{
+                width: 300,
+                marginHorizontal: 50,
+                marginVertical: 10,
+              }}
         onPress={() => navigation.navigate('TelaHome')}
       />
       <Button
         title="Ir para a tela do Futebol Brasileiro"
+        buttonStyle={{
+          backgroundColor: 'rgba(90, 154, 230, 1)',
+          borderColor: 'transparent',
+          borderWidth: 0,
+          borderRadius: 30,
+        }}
+        containerStyle={{
+          width: 300,
+          marginHorizontal: 50,
+          marginVertical: 5,
+        }}
         onPress={() => navigation.navigate('TelaFutebolBrasileiro')}
       />
         <FlatList
@@ -64,9 +97,9 @@ justifyContent:'center',
 corpo:{
   textAlign:'center',
   justifyContent:'center',
-  marginBottom:60,
-  marginLeft:75,
-}
+  marginBottom:110,
+  marginLeft:85,
+},
 });
 
 export default TelaNBA;
