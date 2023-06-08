@@ -8,7 +8,7 @@ const TelaHome = ({ navigation }) => {
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme); // Altere o tema no estado
+    setTheme(newTheme);
   };
 
   const buttonText = theme === 'light' ? 'dark' : 'light';
